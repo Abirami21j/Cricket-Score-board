@@ -13,10 +13,9 @@ let matchEnded = false;
 // Teams
 const indiaPlayers = [
     "Rohit Sharma", "Shubman Gill", "Virat Kohli", "KL Rahul", 
-    "Hardik Pandya", "Ravindra Jadeja", "Rishabh Pant", "Jasprit Bumrah", 
-    "Mohammed Siraj", "Kuldeep Yadav", "Mohammed Shami"
+    "Hardik Pandya", "Jadeja", "Rishabh Pant", "Bumrah", 
+    "Siraj", "Kuldeep", "Shami"
 ];
-
 const australiaPlayers = [
     "David Warner", "Travis Head", "Steve Smith", "Glenn Maxwell",
     "Cameron Green", "Alex Carey", "Pat Cummins", "Mitchell Starc",
