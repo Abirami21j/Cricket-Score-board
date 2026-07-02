@@ -18,9 +18,9 @@ const indiaPlayers = [
 ];
 
 const australiaPlayers = [
-    "David Warner", "Travis Head", "Steve Smith", "Glenn Maxwell", 
-    "Cameron Green", "Alex Carey", "Pat Cummins", "Mitchell Starc", 
-    "Josh Hazlewood", "Adam Zampa"
+    "David Warner", "Travis Head", "Steve Smith", "Glenn Maxwell",
+    "Cameron Green", "Alex Carey", "Pat Cummins", "Mitchell Starc",
+    "Josh Hazlewood", "Adam Zampa", "Nathan Lyon"
 ];
 
 let currentPlayers = indiaPlayers;
@@ -181,22 +181,29 @@ function addSixRun() {
 }
 
 function addWicket() {
-    if (matchEnded) { alert("Match is already over!"); return; }
+    if (matchEnded) {
+        alert("Match is already over!");
+        return;
+    }
+
     batterStats[currentPlayers[striker]].balls++;
     let li = document.createElement("li");
     li.innerHTML = (wickets + 1) + "-" + totalRuns + " (" + currentPlayers[striker] + " " + overs + "." + balls + ")";
     document.getElementById("fallList").appendChild(li);
     wickets++;
+
+    // FIX: Check if all out BEFORE assigning new batsman
     if (wickets >= 10) {
         updateScoreboard();
         checkMatch();
-        return;
+        return; // Stop here, don't assign new batsman
     }
+
+    // Only assign new batsman if wickets < 10
     striker = nextPlayer;
     nextPlayer++;
     nextBall();
 }
-
 function addReset() {
     totalRuns = 0;
     wickets = 0;
@@ -230,9 +237,12 @@ function checkMatch() {
             document.getElementById("result").innerHTML = "🏆 AUSTRALIA WON THE MATCH";
         } else if (wickets >= 10 || overs >= TOTAL_OVERS) {
             matchEnded = true;
-            document.getElementById("result").innerHTML = "🏆 INDIA WON THE MATCH";
+            if (totalRuns == firstInningsScore) {
+                document.getElementById("result").innerHTML = "🤝 MATCH TIED";
+            } else if (totalRuns < firstInningsScore) {
+                document.getElementById("result").innerHTML = "🏆 INDIA WON THE MATCH";
+            }
         }
     }
 }
-
 updateScoreboard();
