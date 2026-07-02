@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Scoreboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+
+    
+
+    <div class="overlay">
+
+        <h1>🏏 CRICKET SCOREBOARD</h1>
+
+        <div class="welcome">
+            🏆 Enjoy the Game!
+        </div>
+
+        <div class="teams">
+
+            <div class="team india">
+                <img src="https://cdn.britannica.com/97/1597-050-008F30FA/Flag-India.jpg">
+                <h2>TEAM INDIA</h2>
+            </div>
+
+            <div class="vs">
+                VS
+            </div>
+
+            <div class="team australia">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Flag_of_Australia.svg">
+                <h2>TEAM AUSTRALIA</h2>
+            </div>
+
+        </div>
+
+    </div>
+    
+
+</div>
+
+<div class="team-selector">
+    <select id="teamSelect" onchange="showPlayers()">
+        <option value="">-- Team Players --</option>
+        <option value="india">India</option>
+        <option value="australia">Australia</option>
+    </select>
+</div>
+<div id="indiaPlayers" class="players india-style" style="display:none;">
+
+    <div class="player-grid">
+
+        <div class="player-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnR6BAkgopmuy3zNO8HHfFpmIwbKF45z2OBNkE9xZ1A&s=10">
+            <p>Rohit Sharma</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvtuhbwjSP3EFCkxaJ_njFJhneLK1817WszwRMs15e3w&s=10">
+            <p>Shubman Gill</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.bcci.tv/resizedimageskirti/164_compress.png">
+            <p>Virat Kohli</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/19.png">
+            <p>KL Rahul</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzyIRzIwORtyf-0GrsadPFOXGrlF1RuW7bg-cp4Vp73PxIdVEkxybgoNOtFLzXz9E6C1eSkvfpLLcjKnYGhL1IxqOFAjwaC0NH8H0r0Q&s=10">
+            <p>Hardik Pandya</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/46.png">
+            <p>Jadeja</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuo2ZuCfSruCm3XXTxVPg--XiIHFIlPc4taajv5IkQpg&s=10">
+            <p>Rishabh Pant</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/9.png">
+            <p>Bumrah</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0UVvLE7RLnOVuSS4RZqXtk2gu54OT-K78sHF9tShXQVkMWDSUokEk0Q5_CJ_vuJwMkgHgUm8NadSgs2Qw88GgkWZAPZmO4XnWcMf_RA&s=10">
+            <p>Siraj</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/14.png">
+            <p>Kuldeep</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/47.png">
+            <p>Shami</p>
+        </div>
+
+    </div>
+</div>
+<!-- AUSTRALIA PLAYERS -->
+<div id="australiaPlayers" class="players aus-style" style="display:none;">
+     <div class="player-grid">
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2024/214.png">
+            <p>David Warner</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/37.png">
+            <p>Travis Head</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/playerheadshot/ipl/284/271.png">
+            <p>Steve Smith</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM7fV2wLXYOxquY_3KjH1S_aQTfsynxO5YjtuI7AXYKg&s=10">
+            <p>Glenn Maxwell</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/550.png">
+            <p>Cameron Green</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/playerheadshot/ipl/284/3882.png">
+            <p>Alex Carey</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/33.png">
+            <p>Pat Cummins</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://documents.iplt20.com/ipl/IPLHeadshot2026/31.png">
+            <p>Mitchell Starc</p>
+        </div>
+
+        <div class="player-card">
+            <img src="">
+            <p>Josh Hazlewood</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9gp7SyfBOOjFjBF9bHz8lLbG4KtLIYjm-kIBVFUhXaCbdqdoJ3TfxgBo&s=10">
+            <p>Adam Zampap</p>
+        </div>
+
+    
+    </div>
+</div>
+
+<!-- Match Details -->
+
+<div class="match-details">
+
+    <h2>🏟 Match Details</h2>
+
+    <div class="details">
+
+        <p><b>Stadium :</b> Narendra Modi Stadium</p>
+
+        <p><b>City :</b> Ahmedabad</p>
+
+        <p><b>Date :</b> 05 July 2026</p>
+
+        <p><b>Toss :</b> India won the toss & Bat First</p>
+
+    </div>
+
+</div>
+
+<!-- Score Cards -->
+
+<div class="cards">
+
+    <div class="card">
+        <h3>Total Score</h3>
+        <h1 id="totalScore">0</h1>
+    </div>
+
+    <div class="card">
+        <h3>Score</h3>
+        <h1 id="score">0/0</h1>
+    </div>
+
+    <div class="card">
+        <h3>Overs</h3>
+        <h1 id="overs">0.0</h1>
+    </div>
+
+    <div class="card">
+        <h3>Run Rate</h3>
+        <h1 id="runRate">0.00</h1>
+    </div>
+
+</div>
+
+<!-- Target -->
+
+<div class="cards">
+
+    <div class="card">
+        <h3>Target</h3>
+        <h1 id="target">180</h1>
+    </div>
+
+    <div class="card">
+        <h3>Runs Needed</h3>
+        <h1 id="needRuns">180</h1>
+    </div>
+
+    <div class="card">
+        <h3>Balls Left</h3>
+        <h1 id="ballsLeft">120</h1>
+    </div>
+
+</div>
+
+<!-- Update -->
+
+<div class="update">
+
+    <h2>Update Score</h2>
+
+    <button onclick="addRun()">+1 Run</button>
+
+    <button onclick="addFourRun()">+4 Runs</button>
+
+    <button onclick="addSixRun()">+6 Runs</button>
+
+    <button onclick="addWicket()">Wicket</button>
+
+    <button onclick="addReset()">Reset</button>
+
+    <button id="secondInningsBtn"
+        onclick="startSecondInnings()"
+        style="display:none; color: coral;">
+    Start 2nd Innings
+</button>
+
+</div>
+
+
+<!-- Batting -->
+
+<div class="batting">
+
+<h2>Current Batters</h2>
+
+<table>
+
+<tr>
+
+<th>Player</th>
+
+<th>Runs</th>
+
+<th>Balls</th>
+
+</tr>
+
+<tr>
+
+<td id="batsman1">Rohit Sharma</td>
+
+<td id="bat1Runs">0</td>
+
+<td id="bat1Balls">0</td>
+
+</tr>
+
+<tr>
+
+<td id="batsman2">Shubman Gill</td>
+
+<td id="bat2Runs">0</td>
+
+<td id="bat2Balls">0</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- Fall Of Wickets -->
+
+<div class="fall">
+
+<h2>❌ Fall Of Wickets</h2>
+
+<ul id="fallList">
+
+</ul>
+
+</div>
+
+<!-- Winner -->
+
+<div class="winner">
+
+<h2 id="result"></h2>
+
+</div>
+
+<script src="javascript.js"></script>
+
+
+<div id="playerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; text-align:center; position:relative; max-width:90%;">
+        <span onclick="closeModal()" style="position:absolute; top:5px; right:15px; font-size:30px; cursor:pointer; color:#333;">&times;</span>
+        <img id="modalImage" src="" width="250" style="border-radius:8px; max-width:100%;">
+        <h3 id="modalName" style="margin-top:10px; color:#333;"></h3>
+    </div>
+</div>
+
+</body>
+</html>
